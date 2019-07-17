@@ -4,8 +4,6 @@ import QrReader from "react-qr-reader";
 export default class AwesomeQrReader extends Component {
   state = {
     result: "No result",
-    buttonDisabled: "",
-    buttonText: "RESTART",
     startTimestamp: -1,
     elapsed: 0,
     done: false
@@ -46,7 +44,7 @@ export default class AwesomeQrReader extends Component {
     return (
       <div>
         <div>
-            <button onClick={this.startDetect}>{this.state.buttonText}</button>
+            <button onClick={this.startDetect}>RESTART</button>
         </div>
         <div>
            <span>Result: </span>&nbsp;<span>{this.state.result}</span>
