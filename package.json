@@ -1,17 +1,22 @@
 {
-  "name": "my-app",
+  "name": "js-qrcode-elapse",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "https://https://eigo-mt-fuji.github.io/js-qrcode-elapse",
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "react-qr-reader":"~2.2.1",
+    "gh-pages":"*"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && gh-pages -d build",
+    "prepush": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"

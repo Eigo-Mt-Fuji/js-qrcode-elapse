@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+  - 8.15.1
+  - 8.16.0
+script:
+  - npm run build-css
+  - npm run lint
+  - npm run test
+after_success:
+  - git config --global user.name "efg.river"
+  - git config --global user.email "efg.river@gmail.com"
+  - git remote rm origin
+  - git remote add origin https://efg.river:${GITHUB_TOKEN}@github.com/Eigo-Mt-Fuji/js-qrcode-elapse.git
+  - if [ $TRAVIS_BRANCH=="master" ]; then npm run deploy ;fi
+notifications:
+  slack:
+    rooms:
+      secure: dBXo66T+ro+2hMpxRg2l1Mzji1+4hxzxk2QlGIjxez+O3qbhYODYJG8jWyT58jQ9/axFLHgP39RPMeDuEfFR/NnZcaeYBeZqWviu7/hOFDM8v8qkuwKpJKDyCBhsxsEyjgnww33RktxLu8KL3mDG1UlfpdgfKiTbhZ96blr8/PzSodAicPpzuTEApPnNh+YseyvFRo/qm6xXz/B4iTunjYEhYBQLa6Suo2N8WyaRmcJqzDaYiFKjhSycoRBWboRvD1NFREZEZnFIqKdkBKr9JsCUA4HVSZas1JDWJ1apPj3N45O/7JvXhK55VVpcPWcFUQLchMP8+JwUagfNbCkkwFRzGRoD+bPsFOcmaJxWrnILuJpNL5XpUWSsDaJR+qcOmPg3AB7ggrt8YCmZHRoa+2QbAFFp0IcVmf7IfkKcuE+yxvKTMWfD50YI6gV+EwG7fznSUomTa+5t9K2TVNJ3/7jNsjumKNTCZVEvW469X1fl6E0BuxKKChVYkVOKzYIh5oyTYpq7471S2FiqSNX6NYOJ2BQXMrlbMngEcRYU/Ih2yFyoNsAr0rRYIiyYRv0tNQjMKJMulCQ8vJDkIbws6ALOmfLXmmp2bxKbCFOIB6kN4sfsOwOj5SXHOSDXjds7yp1wj/L8HGwmgCsjfFdxXM9+WC8vMOSksYoTGJpUqs4=
+    on_success: change
+    on_failure: always
