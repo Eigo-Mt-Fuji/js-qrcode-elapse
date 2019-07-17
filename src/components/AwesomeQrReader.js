@@ -4,16 +4,23 @@ import QrReader from "react-qr-reader";
 export default class AwesomeQrReader extends Component {
   state = {
     result: "No result",
+    buttonDisabled: "",
+    buttonText: "RESTART",
     startTimestamp: -1,
-    elapsed: 0
+    elapsed: 0,
+    done: false
   }
 
   handleScan = data => {
-    if (data) {
-      this.setState({
-        result: data,
-        elapsed: (new Date()).getTime() - this.state.startTimestamp
-      });
+
+    if (!this.state.done) {
+       if (data) {
+         this.setState({
+            result: data,
+            done: true,
+            elapsed: (new Date()).getTime() - this.state.startTimestamp
+         });
+       } 
     }
   }
   handleError = err => {
@@ -25,7 +32,8 @@ export default class AwesomeQrReader extends Component {
      this.setState({
        result: "",
        startTimestamp: (new Date()).getTime(),
-       elapsed: 0
+       elapsed: 0,
+       done: false,
      });
   }
 
@@ -38,7 +46,7 @@ export default class AwesomeQrReader extends Component {
     return (
       <div>
         <div>
-            <button onClick={this.startDetect}>START</button>
+            <button onClick={this.startDetect}>{this.state.buttonText}</button>
         </div>
         <div>
            <span>Result: </span>&nbsp;<span>{this.state.result}</span>

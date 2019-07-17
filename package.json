@@ -2,7 +2,7 @@
   "name": "js-qrcode-elapse",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "https://https://eigo-mt-fuji.github.io/js-qrcode-elapse",
+  "homepage" : "https://eigo-mt-fuji.github.io/js-qrcode-elapse",
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
