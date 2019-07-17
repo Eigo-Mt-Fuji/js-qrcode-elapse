@@ -8,7 +8,8 @@
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
     "react-qr-reader":"~2.2.1",
-    "gh-pages":"*"
+    "gh-pages":"*",
+    "lodash.template" :"^4.5.0"
   },
   "scripts": {
     "start": "react-scripts start",
