@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "//eigo-mt-fuji.github.io/js-qrcode-elapse/precache-manifest.6996bd439efcc81de72657e980cde8a2.js"
+  "//eigo-mt-fuji.github.io/js-qrcode-elapse/precache-manifest.f0563747b1b1971c443a8ed99e66503b.js"
 );
 
 self.addEventListener('message', (event) => {
